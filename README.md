@@ -62,14 +62,13 @@ optional arguments:
   -m MODE, --mode MODE  modes: 0 => 32 bots; 1 => 16 bots; 2 => 8 bots; 3 => 4 bots
 ```
 
-## Proxies
+## Proxy
 
-The system needs a list of proxies to work. Once uploaded, proxies are saved into a database.<br/>
+Sistemin çalışması için bir proxy listesine ihtiyacı vardır. Proxy'ler yüklendikten sonra bir veritabanına kaydedilir.<br/>
 
 ### Upload
 
-Upload a list of proxies into the program. The proxy file must have a format of `ip:port`<br/>
-
+Programa "ip:port" şeklinde proxy listesi yüklenebilir<br/>
 `proxies_list.txt`
 
 ```
@@ -81,15 +80,15 @@ Upload a list of proxies into the program. The proxy file must have a format of 
 184.178.172.25:15291
 ```
 
-To upload a list of proxies a similar syntax must be followed.
+Yukarıda gösterildiği şekilde olmalıdır.
 
 ```
-python instagram.py -px <path to proxy list>
+python instagram.py -px <proxy listesi>
 ```
 
-### Stats
+### Durum
 
-This gives an insight into the health of the proxies in the database.
+Veritabanında bulunan proxylerin çalışıp çalışmadığını gösterir
 
 ```
 python instagram.py --stats
@@ -97,47 +96,45 @@ python instagram.py --stats
 
 ### Prune
 
-This allows the able to get rid of proxies with a score below a given score.<br/>
-It is recommended that you run the `--stats` and prune the database of proxies<br/>
-who have a proxy score below `Q1`.
+Bellirlenen puanın altındaki proxylerin temizlenmesini sağlar
 
 ```
 python instagram.py --prune 0.05
 ```
 
-Pruning is not a requirement because the <br/>
-the system will automatically learn which proxies perform poorly and stop using them.
+Prune zorunlu değil opsiyoneldir çünkü <br/>
+sistem, hangi proxy'lerin düşük performans gösterdiğini otomatik olarak öğrenecek ve bunları kullanmayı bırakacaktır.
 
-### Usage
-
-```
-python instagram.py -u <username> -p <passlist>
-```
-
-### Run
+### Kullanım
 
 ```
-[-] Wordlist: passlist.txt
-[-] Username: Sami09.1
-[-] Password: 272
-[-] Complete: 45.51%
-[-] Attempts: 228
-[-] Browsers: 273
+python instagram.py -u <HesapAdi> -p <ŞifreListesi>
+```
+
+### Çalıştığında
+
+```
+[-] Wordlist: sifre.txt
+[-] Username: xisouTest0.1
+[-] Password: test1648
+[-] Complete: 65.51%
+[-] Attempts: 1228
+[-] Browsers: 173
 [-] Exists: True
 ```
 
-### Stop
+### Tamamlandığında
 
 ```
-[-] Wordlist: passlist.txt
-[-] Username: Sami09.1
-[-] Password: Sami123
-[-] Complete: 62.67%
-[-] Attempts: 314
-[-] Browsers: 185
+[-] Wordlist: sifre.txt
+[-] Username: xisouTest0.1
+[-] Password: test1648
+[-] Complete: 65.51%
+[-] Attempts: 1228
+[-] Browsers: 173
 [-] Exists: True
 
-[!] Password Found
-[+] Username: Sami09.1
-[+] Password: Sami123
+[!]Şifre bulundu
+[+] Username: xisouTest0.1
+[+] Password: test1648
 ```
